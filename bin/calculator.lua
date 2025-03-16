@@ -1,4 +1,4 @@
-local window = require("HydraUI.windowComponents.window").new("Calculator", 11, 11)
+local window = require("HydraUI.windowComponents.window").new("Calculator", 11, 11, 10, 3)
 local button = require("HydraUI.windowComponents.button")
 
 local text
