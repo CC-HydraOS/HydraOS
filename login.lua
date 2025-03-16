@@ -39,6 +39,7 @@ local function readPassword()
 
       if event == "key" then
          if val == keys.enter then
+            print()
             return password
          elseif val == keys.backspace then
             password = password:gsub(".$", "")
