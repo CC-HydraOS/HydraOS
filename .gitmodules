@@ -1,6 +1,8 @@
 [submodule "HydraKernel"]
 	path = HydraKernel
 	url = https://github.com/CC-HydraOS/HydraKernel.git
+	branch = master
 [submodule "lib/HydraUI"]
 	path = lib/HydraUI
 	url = https://github.com/CC-HydraOS/HydraUI.git
+	branch = master
