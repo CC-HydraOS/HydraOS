@@ -35,7 +35,7 @@ local function readPassword()
    local password = ""
 
    while true do
-      local event, val = os.pullEventRaw()
+      local event, val = kernel.events.awaitEvent()
 
       if event == "key" then
          if val == keys.enter then
