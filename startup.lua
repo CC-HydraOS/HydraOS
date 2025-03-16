@@ -53,7 +53,7 @@ local keep = {
    pocket = true,
    commands = true,
    _G = true,
-   keys = true
+   keys = true,
 }
 
 local toRemove = {}
@@ -82,7 +82,7 @@ local delete = {
       "run",
       "loadAPI",
       "unloadAPI",
-      "sleep"
+      "sleep",
    },
    http = {
       "get",
@@ -95,11 +95,11 @@ local delete = {
       "trace",
       "listen",
       "checkURLAsync",
-      "websocketAsync"
+      "websocketAsync",
    },
    fs = {
       "complete",
-      "isDriveRoot"
+      "isDriveRoot",
    }
 }
 
