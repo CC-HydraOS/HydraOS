@@ -37,7 +37,7 @@ local function evaluate()
    end
 
    local newText = tostring(solution)
-   text.text = newText .. (" "):rep(#text.text - #newText)
+   text.text = newText .. (" "):rep(18 - #newText)
 end
 
 text = button.new("                  ", 9, 1, 1, evaluate)
@@ -52,12 +52,12 @@ for y, tbl in ipairs(buttons) do
       elseif btn == "<" then
          window:addComponent(button.new(btn, 1, btnX, btnY, function()
             local newText = text.text:gsub(" *$", ""):gsub(".$", "")
-            text.text = newText .. (" "):rep(#text.text - #newText)
+            text.text = newText .. (" "):rep(18 - #newText)
          end))
       else
          window:addComponent(button.new(btn, 1, btnX, btnY, function()
             local newText = text.text:gsub(" *$", "") .. btn
-            text.text = newText .. (" "):rep(#text.text - #newText)
+            text.text = newText .. (" "):rep(18 - #newText)
          end))
       end
    end
