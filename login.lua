@@ -49,20 +49,20 @@ local function readPassword()
    end
 end
 
-local hashFile = io.open("/etc/passwd", "r")
+local hashFile = fs.open("/etc/passwd", "r")
 
-if not hashFile or hashFile:read("a") == "" then
-   local file = assert(io.open("/etc/passwd", "w"))
+if not hashFile or hashFile.readAll() == "" then
+   local file = assert(fs.open("/etc/passwd", "w"))
 
    term.write("new password: ")
-   file:write(mkPassword(readPassword()))
+   file.write(mkPassword(readPassword()))
    print()
 
-   hashFile = assert(io.open("/etc/passwd", "r"))
+   hashFile = assert(fs.open("/etc/passwd", "r"))
 end
 
-hashFile:seek("set", 0)
-local hash = hashFile:read("a")
+hashFile.seek("set", 0)
+local hash = hashFile.readAll()
 
 term.write("password: ")
 while true do
