@@ -1,3 +1,5 @@
+local term = kernel.screen.get(0)
+
 local function mkPassword(password, key)
    if not key then key = math.random(32, 127) end
 
@@ -35,7 +37,7 @@ local function readPassword()
    local password = ""
 
    while true do
-      local event, val = os.pullEventRaw()
+      local event, val = kernel.events.awaitEvent()
 
       if event == "key" then
          if val == keys.enter then
@@ -55,7 +57,7 @@ local hashFile = fs.open("/etc/passwd", "r")
 if not hashFile or hashFile.readAll() == "" then
    local file = assert(fs.open("/etc/passwd", "w"))
 
-   term.write("new password: ")
+   term:write("new password: ")
    file.write(mkPassword(readPassword()))
    print()
 
@@ -65,7 +67,7 @@ end
 hashFile.seek("set", 0)
 local hash = hashFile.readAll()
 
-term.write("password: ")
+term:write("password: ")
 while true do
    if checkPassword(readPassword(), hash) then
       break
@@ -73,7 +75,7 @@ while true do
       print("Password incorrect")
    end
 
-   term.write("password: ")
+   term:write("password: ")
 end
-term.clear()
+term:clear()
 
