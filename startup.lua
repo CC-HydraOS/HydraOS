@@ -1,0 +1,2 @@
+dofile("/boot/start.lua")
+
