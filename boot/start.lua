@@ -136,7 +136,7 @@ function _G.term.native()
    term.setCursorBlink(true)
    term.clear()
 
-   local file = fs.open("/bios.lua", "r")
+   local file = fs.open("/boot/bios.lua", "r")
    if file == nil then
       term.setCursorBlink(false)
       term.setTextColor(0x4000)
@@ -147,7 +147,7 @@ function _G.term.native()
       os.shutdown()
    end
 
-   local func, err = load(file.readAll(), "bios.lua")
+   local func, err = load(file.readAll(), "/boot/bios.lua")
    file.close()
 
    if not func then
