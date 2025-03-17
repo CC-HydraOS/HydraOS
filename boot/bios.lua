@@ -24,5 +24,5 @@ function os.version()
    return "HydraOS 1.0.0"
 end
 
-loadfile("HydraKernel/init.lua", nil, _G)("HydraKernel.init")
+assert(loadfile("/boot/kernel/init.lua", nil, _G))("HydraKernel.init")
 
