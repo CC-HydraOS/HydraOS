@@ -1,3 +1,3 @@
 require("HydraUI")
-dofile("/bin/launcher.lua")
+kernel.processes.run("/bin/launcher.lua")
 
