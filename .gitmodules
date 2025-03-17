@@ -2,3 +2,7 @@
 	path = lib/HydraUI
    url = https://github.com/CC-HydraOS/HydraUI.git
    branch = "master"
+[submodule "boot/kernel"]
+	path = boot/kernel
+	url = https://github.com/CC-HydraOS/HydraKernel.git
+	branch = master
